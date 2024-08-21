@@ -54,6 +54,29 @@
             }
             
         })
+
+
+        const username = 'jdrndnm'; // Cambia esto por tu nombre de usuario
+        const repoName = 'test_portfolio'; // Cambia esto por el nombre de tu repositorio
+        const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/resources`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Carpetas en el repositorio:');
+                data.forEach(item => {
+                    if (item.type === 'dir') { // Filtrar solo carpetas
+                        console.log(item.name); // Mostrar el nombre de la carpeta en la consola
+                    }
+                });
+            })
+            .catch(error => console.error('Error al cargar las carpetas:', error));
+
     </script>
 
 </body>
