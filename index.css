@@ -49,6 +49,7 @@ body{
 }
 
 .background img{
+    min-width: 1000px;
     width: 100%;
     height: 2000px;
     position: absolute;
