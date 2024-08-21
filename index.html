@@ -9,7 +9,7 @@
 <body>
     
     <nav class="main_nav">
-        <div class="left_side">Logo</div>
+        <div class="left_side">Isabela</div>
         <div class="right_side">
             <div class="nav_btn">Audiovisual</div>
             <div class="nav_btn">Escritos</div>
@@ -21,7 +21,20 @@
         <h1 class="introducton_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
         <p class="introduction_text">Lorem ipsum dolor sit amet . Animi velit mollitia <span>recusandae!</span></p>
         <img class="introduction_img" src="./resources/book_lover.svg" alt="">
+        <script>
 
+            const body = document.body;
+            window.document.addEventListener("scroll", function(){
+
+                const bodyRect = document.body.getBoundingClientRect().top;
+                console.log(""+(0 + bodyRect*2)+"px")
+                body.style.backgroundPositionY = ""+(-bodyRect*0.9)+"px";
+
+                console.log(bodyRect)
+
+            })
+
+        </script>
     </section>
     <section class="audiovisual">
     
