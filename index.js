@@ -21,9 +21,7 @@ document.querySelector(".burguer").addEventListener("click", function(){
 
 function load_section_names_from_github(){
     
-    const username = 'jdrndnm';
-    const repoName = 'test_portfolio'; 
-    const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/secciones`;
+    var apiUrl = `https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones`;
 
     fetch(apiUrl)
         .then(response => {
@@ -43,5 +41,25 @@ function add_section_names_into_web(sections){
     console.log(sections)
     sections.forEach(element => {
         console.log(element)
+
+        fetch(element.url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(element.url)
+            const type_doc = (data.filter(item => item.name ==="type.txt"))[0].download_url
+            console.log("type doc: " + type_doc)
+            
+            
+
+
+
+        })
+        .catch(error => console.error('Error al cargar las carpetas:', error));
+
     });
 }
