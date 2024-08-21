@@ -70,6 +70,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 15px;
 }
 
 .introduction_img{
@@ -166,4 +167,20 @@ section{
 }
 .third_brg{
     transform: rotate(-45deg);
+}
+
+.continue_intro{
+    margin-top: 20px;
+    background-color: #6f4bba;
+    width: 180px;
+    height: 40px;
+    color: White;
+    list-style: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.continue_intro span{
+    display: inline-block;
+    transform: rotate(90deg) scale(1, 1);
 }
