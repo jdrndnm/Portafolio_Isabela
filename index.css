@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    max-width: 1600px;
+    width: 100%;
+    padding: 25px 0px;
+    align-items: center;
+    
+}
+.right_side{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: #6f4bba;
+    align-items: center;
+}
+.left_side{
+    font-weight: bold;
+}
+
+.right_side div{
+    padding: 5px;
+}
+
+.Contacto_button{
+    border: 3px solid #6f4bba;
+    border-radius: 3px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url("./resources/background.svg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+section{
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduction_img{
+    width: 60%;
+    margin-top: 40px;
+}
+.introducton_title{
+    color: #6f4bba;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.introduction_text{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.introduction_text span{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6f4bba;
+}
+
+.nav_btn{
+    cursor: pointer;
+    color: #6f4bba;
+}
+.nav_btn:hover{
+    color: #b298eb;
+}
+.audiovisual{
+    height: 1000px;
+}
