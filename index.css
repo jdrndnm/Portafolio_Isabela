@@ -104,3 +104,66 @@ section{
 .audiovisual{
     height: 1000px;
 }
+.burguer{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position:absolute;
+    right: 30px;
+    top: 30px;
+    transition: 1s;
+}
+
+
+
+.burguer div{
+    box-shadow: inset 0px 0px 0px 1px #36177a;
+    width: 30px;
+    height: 5px;
+    transition: 0.5s;
+    position: relative;
+}
+@media only screen and (max-width: 700px){
+    .main_nav{
+        justify-content: flex-start;
+    }
+    .left_side{
+        margin-left: 40px;
+    }
+    .right_side{
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        right: -100%;
+        background-color: white;
+        flex-direction: column;
+        min-width: 100%;
+        align-items:flex-start;
+        padding-left: 30px;
+        padding-top: 30px;
+        transition-duration: 0.5s;
+    }
+    .right_side div{
+
+    }
+    .burguer{
+        display: flex;
+    }
+}
+.show_menu{
+    right: 0%;
+}
+
+.burguer:focus div:first-child{
+    transform: rotate(45deg);
+}
+.first_brg{
+    transform: rotate(45deg);
+}
+.second_brg{
+    width: 0px;
+
+}
+.third_brg{
+    transform: rotate(-45deg);
+}
