@@ -112,7 +112,7 @@ async function load_photographic_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = element_url.data.filter(item  => item.name === "fotos.pdf")[0].path;
+            pdf_obj.src = "https://docs.google.com/gview?url="+element_url.data.filter(item  => item.name === "fotos.pdf")[0].path+"&embedded=true";
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
