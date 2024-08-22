@@ -45,29 +45,21 @@
         
     },
     "escritos":{
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
+        "Crónica 1 TCE 5":{
+            "miniatura":"secciones/escritos/Crónica%201%20TCE%205/miniatura.png",
+            "escrito":"secciones/escritos/Crónica%201%20TCE%205/escrito.pdf"
         },
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
+        "EN LA DEFENSA DEL CAPITAL NATURAL":{
+            "miniatura":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/miniatura.png",
+            "escrito":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/escrito.pdf"
         },
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
+        "Links":{
+            "miniatura":"secciones/escritos/Links/miniatura.png",
+            "escrito":"secciones/escritos/Links/escrito.pdf"
         },
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
-        },
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
-        },
-        "":{
-            "miniatura":"/miniatura.png",
-            "escrito":"/escrito.pdf"
+        "Trabajo Final Organizacional":{
+            "miniatura":"secciones/escritos/Trabajo%20Final%20Organizacional/miniatura.png",
+            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/escrito.pdf"
         }
     }
 }

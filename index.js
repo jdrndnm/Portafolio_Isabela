@@ -156,3 +156,25 @@ async function load_photographic_projects(){
 }
 
 load_photographic_projects()
+
+
+async function load_doc_projects(){
+    const all_docs = await axios.get("directories.txt")
+    
+    const keys = Object.keys(all_docs.data.escritos);
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+
+        const doc = document.createElement("div");
+        doc.classList.add("doc")
+        document.querySelector(".docs_container").appendChild(doc);
+
+        const doc_img = document.createElement("img");
+        doc_img.src = all_docs.data.escritos[key].miniatura;
+        
+        doc.appendChild(doc_img);
+
+    }  
+}
+
+load_doc_projects();
