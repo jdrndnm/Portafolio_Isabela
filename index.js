@@ -208,6 +208,13 @@ async function add_video_to_section(new_section, projects) {
             video_from_carrousel.classList.add("carousel_selected")
         }
         
+        video_from_carrousel.addEventListener("click", function(){
+
+            thumbnailimg.src = video_from_carrousel.dataset.thumbnail;
+            project_video_title.innerHTML = video_from_carrousel.dataset.title;
+            project_video_description.innerHTML = video_from_carrousel.dataset.description;
+
+        })
 
     }
     
