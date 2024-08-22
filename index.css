@@ -41,7 +41,7 @@ body{
     align-items: center;
     flex-direction: column;
     scrollbar-width:thin;
-    
+    scroll-behavior: smooth;
 }
 .background{
     width: 100%;
@@ -74,6 +74,8 @@ section{
     align-items: center;
     padding: 15px;
     min-height: 100vh;
+    opacity: 0%;
+    transition: 1s;
 }
 
 /* .sec{
@@ -361,4 +363,8 @@ section{
     height: 2px;
     background: linear-gradient(97deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 33%, rgba(0,0,0,1) 68%, rgba(255,255,255,0) 100%);
     margin-top: 15px;
+}
+
+.active{
+    opacity: 100%;
 }

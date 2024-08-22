@@ -174,50 +174,109 @@ async function load_doc_projects(){
         
         doc.appendChild(doc_img);
 
+        doc.addEventListener("click", function(){
+            const background_dark = document.createElement("div");
+            background_dark.classList.add("background_dark");
+            document.body.appendChild(background_dark);
+
+            document.body.style.overflow="hidden";
+
+            const pdf_obj = document.createElement("iframe");
+            pdf_obj.src = "https://jdrndnm.github.io/test_portfolio/"+all_docs.data.escritos[key].escrito;
+            pdf_obj.width = "1000";
+            pdf_obj.height = "800";
+            pdf_obj.type = "application/pdf";
+
+            background_dark.appendChild(pdf_obj);
+
+            background_dark.addEventListener("click", function(){
+                this.remove()
+                document.body.style.overflow="scroll"
+            })
+
+        })
+
     }  
 }
 
 load_doc_projects();
 
-function smoothScrollTo(element) {
-    const targetPosition = element.getBoundingClientRect().top + window.scrollY; // Obtener la posición del elemento
-    const startPosition = window.scrollY; // Posición actual del scroll
-    const distance = targetPosition - startPosition; // Distancia a recorrer
-    const duration = 40; // Duración del desplazamiento en milisegundos
-    let startTime = null;
+const lista = [
+    { index: 0, content: document.querySelector(".introduction") },
+    { index: 1, content: document.querySelector(".audiovisual") },
+    { index: 2, content: document.querySelector(".fotografía") },
+    { index: 3, content: document.querySelector(".escrito") },
+    { index: 4, content: document.querySelector(".contacto_section")  }
+];
 
-    function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1); // Progreso de la animación
-        const ease = easeInOutCubic(progress); // Efecto de suavizado
-
-        window.scrollTo(0, startPosition + (distance * ease)); // Desplazamiento
-
-        if (timeElapsed < duration) {
-            requestAnimationFrame(animation); // Continuar la animación
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        } else {
+            entry.target.classList.remove('active');
         }
-    }
+    });
+}, { threshold: 0.3 });
 
-    requestAnimationFrame(animation);
-}
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
 
-// Función de suavizado cúbico
-function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
 
-let lastScrollY = window.scrollY
-window.addEventListener("scroll", function(){
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY){
-        console.log("abajo")
-        smoothScrollTo(document.querySelector(".audiovisual"))
-        // document.querySelector(".audiovisual").scrollIntoView({
-        //     behavior:"auto"
-        // })
-    } else {
-        console.log("arriba")
-    }
-    lastScrollY = currentScrollY;
-})
+
+
+// function scrollToTarget(targetSelector, duration) {
+//     const target = targetSelector
+//     if (!target) {
+//         console.error("Elemento no encontrado:", targetSelector);
+//         return;
+//     }
+
+//     const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+//     const startPosition = window.scrollY;
+//     const distance = targetPosition - startPosition;
+//     let startTime = null;
+
+//     function animation(currentTime) {
+//         if (startTime === null) startTime = currentTime;
+//         const timeElapsed = currentTime - startTime;
+//         const progress = Math.min(timeElapsed / duration, 1); // Normaliza el progreso
+
+//         // Easing function (ease-in-out)
+//         const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+
+//         window.scrollTo(0, startPosition + distance * ease);
+
+//         if (timeElapsed < duration) {
+//             requestAnimationFrame(animation);
+//         }
+//     }
+
+//     requestAnimationFrame(animation);
+// }
+
+// Ejemplo de uso: desplazar hacia el elemento con id "miObjetivo" en 1000 ms (1 segundo)
+// scrollToTarget("#miObjetivo", 1000);
+
+
+
+
+// window.addEventListener("wheel", function(e){
+//     if (e.deltaY > 0){
+//         console.log("abajo")
+//         const active_element = document.querySelector(".active")
+//         const element_index = lista.find(item => item.content === active_element);
+//         const to_scroll_to = lista.find(item => item.index === element_index.index+1);
+        
+//         console.log(to_scroll_to)
+//         to_scroll_to.content.scrollIntoView({
+//             behavior:'auto'
+//         })
+
+//     } else {
+//         console.log("arriba")
+//     }
+// })
+
+

@@ -55,11 +55,11 @@
         },
         "Links":{
             "miniatura":"secciones/escritos/Links/miniatura.png",
-            "escrito":"secciones/escritos/Links/escrito.pdf"
+            "escrito":"secciones/escritos/Links/Links.docx.pdf"
         },
         "Trabajo Final Organizacional":{
             "miniatura":"secciones/escritos/Trabajo%20Final%20Organizacional/miniatura.png",
-            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/escrito.pdf"
+            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/Trabajo Final Organizacional .docx.pdf"
         }
     }
 }
