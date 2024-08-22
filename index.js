@@ -19,6 +19,25 @@ document.querySelector(".burguer").addEventListener("click", function(){
 })
 
 
-function load_video_projects(){
-    
+
+async function load_video_projects(){
+
+    const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
+    for (let i = 0; i < all_videos.data.length; i++) {
+        const element = all_videos.data[i];
+        console.log(element.url);
+
+        const nw = await axios.get(element.url)
+        console.log(nw)
+
+        // const video_item_container = document.createElement("div");
+        // video_item_container.classList.add("video_item_container");
+        // document.querySelector(".video_containers").appendChild(video_item_container);
+
+        // const img_thumbnail = 
+
+    }
+
 }
+
+load_video_projects()
