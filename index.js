@@ -84,3 +84,11 @@ async function load_video_projects(){
 }
 
 load_video_projects()
+
+
+async function load_photographic_projects(){
+    const all_photos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/fotografía')
+    console.log(all_photos)
+}
+
+load_photographic_projects()
