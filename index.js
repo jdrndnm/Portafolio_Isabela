@@ -88,7 +88,53 @@ load_video_projects()
 
 async function load_photographic_projects(){
     const all_photos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/fotografía')
-    console.log(all_photos)
+    
+    for (let i = 0; i < all_photos.data.length; i++) {
+        const element = all_photos.data[i];
+
+        const element_url = await axios.get(element.url)
+        const thumbnail_url = element_url.data.filter(item => item.name === "miniatura.png")[0].download_url
+
+        const photo = document.createElement("div");
+        photo.classList.add("photo");
+        document.querySelector(".photos_container").appendChild(photo);
+
+        const photo_img = document.createElement("img");
+        photo_img.src = thumbnail_url;
+        photo.appendChild(photo_img)
+
+        
+        photo.addEventListener("click", function(){
+            const background_dark = document.createElement("div");
+            background_dark.classList.add("background_dark");
+            document.body.appendChild(background_dark);
+
+            document.body.style.overflow="hidden";
+
+            const pdf_obj = document.createElement("object");
+            pdf_obj.data = element_url.data.filter(item  => item.name === "fotos.pdf")[0].path;
+            pdf_obj.width = "1000";
+            pdf_obj.height = "800";
+            pdf_obj.type = "application/pdf";
+
+            background_dark.appendChild(pdf_obj);
+
+            background_dark.addEventListener("click", function(){
+                this.remove()
+                document.body.style.overflow="scroll"
+            })
+
+        })
+
+
+        
+
+        
+
+
+        // console.log(thumbnail_url)
+    }
+
 }
 
 load_photographic_projects()
