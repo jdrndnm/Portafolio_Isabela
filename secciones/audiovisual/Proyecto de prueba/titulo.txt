@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Un monillo bien mono
+=======
+Un mono xd
+>>>>>>> 6d3c921cee45995e8d1ae24a11ef84127307f4d2
