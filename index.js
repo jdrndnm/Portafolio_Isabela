@@ -1,3 +1,21 @@
+const all_nav_buttons = document.querySelectorAll(".nav_btn");
+all_nav_buttons.forEach(element => {
+    element.addEventListener("click", function(){
+        const burguer = document.querySelector(".right_side");
+        if (burguer.classList.contains("show_menu")){
+            burguer.classList.remove("show_menu")
+            document.body.style.overflow="scroll";
+    
+            document.querySelector(".burguer div:first-child").style.transform = "rotate(0deg) translate(0px, 0px)"
+            document.querySelector(".burguer div:nth-child(2)").style.width=""
+            document.querySelector(".burguer div:nth-child(3)").style.transform = "rotate(0deg) translate(0px, 0px)"
+        }
+    })
+
+})
+
+
+
 document.querySelector(".burguer").addEventListener("click", function(){
     const burguer = document.querySelector(".right_side");
     if (burguer.classList.contains("show_menu")){
@@ -217,7 +235,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('active');
         }
     });
-}, { threshold: 0.3 });
+}, { threshold: 0.1 });
 
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);

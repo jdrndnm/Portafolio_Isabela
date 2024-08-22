@@ -110,6 +110,8 @@ section{
 }
 
 .nav_btn{
+    text-decoration: none;
+    /* text */
     cursor: pointer;
     color: #6f4bba;
 }
@@ -196,7 +198,7 @@ section{
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 50;
 }
 .continue_intro span{
     display: inline-block;
@@ -368,3 +370,6 @@ section{
 .active{
     opacity: 100%;
 }
+/* .audiovisual{
+    width: ;
+} */
