@@ -178,3 +178,46 @@ async function load_doc_projects(){
 }
 
 load_doc_projects();
+
+function smoothScrollTo(element) {
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY; // Obtener la posición del elemento
+    const startPosition = window.scrollY; // Posición actual del scroll
+    const distance = targetPosition - startPosition; // Distancia a recorrer
+    const duration = 40; // Duración del desplazamiento en milisegundos
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1); // Progreso de la animación
+        const ease = easeInOutCubic(progress); // Efecto de suavizado
+
+        window.scrollTo(0, startPosition + (distance * ease)); // Desplazamiento
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation); // Continuar la animación
+        }
+    }
+
+    requestAnimationFrame(animation);
+}
+
+// Función de suavizado cúbico
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+let lastScrollY = window.scrollY
+window.addEventListener("scroll", function(){
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY){
+        console.log("abajo")
+        smoothScrollTo(document.querySelector(".audiovisual"))
+        // document.querySelector(".audiovisual").scrollIntoView({
+        //     behavior:"auto"
+        // })
+    } else {
+        console.log("arriba")
+    }
+    lastScrollY = currentScrollY;
+})

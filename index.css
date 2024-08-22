@@ -355,3 +355,10 @@ section{
     top: 20px;
     height: 100%;
 }
+.long_line{
+    opacity: 30%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(97deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 33%, rgba(0,0,0,1) 68%, rgba(255,255,255,0) 100%);
+    margin-top: 15px;
+}
