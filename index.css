@@ -13,6 +13,7 @@
     width: 100%;
     padding: 25px 0px;
     align-items: center;
+
     
 }
 .right_side{
@@ -143,12 +144,14 @@ section{
         padding-left: 30px;
         padding-top: 30px;
         transition-duration: 0.5s;
+        z-index: 100;
     }
     .right_side div{
 
     }
     .burguer{
         display: flex;
+        z-index: 101;
     }
 }
 .show_menu{
