@@ -13,10 +13,10 @@
     <nav class="main_nav">
         <div class="left_side">Isabela</div>
         <div class="right_side">
-            <div class="nav_btn">Audiovisual</div>
+            <!-- <div class="nav_btn">Audiovisual</div>
             <div class="nav_btn">Escritos</div>
-            <div class="nav_btn">Fotografía</div>
-            <div class="nav_btn Contacto_button">Contacto</div>
+            <div class="nav_btn">Fotografía</div> -->
+            <div class="nav_btn contacto_button">contacto</div>
         </div>
     </nav>
     <div class="burguer">
@@ -28,13 +28,51 @@
         <h1 class="introducton_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
         <p class="introduction_text">Lorem ipsum dolor sit amet . Animi velit mollitia <span>recusandae!</span></p>
         <img class="introduction_img" src="./resources/book_lover.svg" alt="">
-        <button class="continue_intro"><span>&#10140;</span> Avanzar</button>
+        <button class="continue_intro"><span>&#10140;</span> Galería</button>
     </section>
-    <section class="audiovisual">
-    
 
+
+    <!-- video section -->
+    <section class="video">
+        <div class="video_project">
+
+            <script>
+                function getThumbnail(url) {
+                    const videoId = url.split('v=')[1]?.split('&')[0];                    
+                    if (!videoId) {
+                        alert('Por favor ingresa una URL válida de YouTube.');
+                        return;
+                    }                    
+                    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;                    
+                    return thumbnailUrl
+                }
+
+                const thumbnail = getThumbnail("https://www.youtube.com/watch?v=OxuN8kqhAmE&list=PL4QltnrCjMO0WaLvLpIyFS32AMeI_utQo&index=5")
+                console.log("thumbnail: " + thumbnail)
+            </script>
+
+            <div class="main_video_container">
+                <div class="video_thumbnail">
+                    <img class="video_play" src="./resources/icon_play.png" alt="">
+                    <img class="thumbnailimg" src="https://img.youtube.com/vi/OxuN8kqhAmE/hqdefault.jpg" alt="">                                
+    
+                </div>
+                <div class="textual">
+                    <p class="project_video_title">Este monito mono</p>
+                    <p class="project_video_description">Vídeo de un mono que encontré por ahí.</p>
+                </div>
+            </div>
+
+            <div class="carrousel"></div>
+
+        </div>
+        
     </section>
-    <section></section>
+
+
+    
+    <section class="contacto_section"></section>
+
     
     <script src="./index.js"></script>
 </body>

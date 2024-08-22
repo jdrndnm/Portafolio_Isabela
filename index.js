@@ -35,6 +35,21 @@ load_section_names_from_github()
 function add_section_names_into_web(sections){
     
     sections.forEach(element => {
+        
+        // add the section to the nav bar
+        const section_button = document.createElement("div");
+        section_button.classList.add("nav_btn");
+        section_button.innerHTML=element.name;
+        const contact_button = document.querySelector(".contacto_button")
+        document.querySelector(".right_side").insertBefore(section_button,contact_button);
+
+        // create the section
+        const new_section = document.createElement("section");
+        new_section.classList.add(""+ element.name +"_section");
+        const contacto_section = document.querySelector(".contacto_section");
+        document.body.insertBefore(new_section, contacto_section);
+        
+
 
         axios.get(element.url)
         .then(response => {
@@ -60,6 +75,8 @@ function add_section_names_into_web(sections){
     });
 }
 
-function add_video_section(url){
-    console.log(url)
+function add_video_section(projects){
+    projects.forEach(element => {
+        console.log(element)
+    })
 }
