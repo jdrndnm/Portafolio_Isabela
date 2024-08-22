@@ -172,8 +172,12 @@ section{
         display: flex;
         z-index: 101;
     }
-    .body{
-        gap: 50px;
+    body{
+        gap: 100px;
+    }
+    .introduction{
+        position: relative;
+        top:-80px;
     }
 
 
