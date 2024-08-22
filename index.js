@@ -23,38 +23,34 @@ function load_section_names_from_github(){
     
     var apiUrl = `https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones`;
 
-    fetch(apiUrl)
+    axios.get(apiUrl)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la solicitud');
-            }
-            return response.json();
-        })
-        .then(data => {
-            add_section_names_into_web(data)
+            add_section_names_into_web(response.data)
         })
         .catch(error => console.error('Error al cargar las carpetas:', error));
 }
+
 load_section_names_from_github()
 
 function add_section_names_into_web(sections){
-    console.log(sections)
+    
     sections.forEach(element => {
-        console.log(element)
 
-        fetch(element.url)
+        axios.get(element.url)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la solicitud');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(element.url)
-            const type_doc = (data.filter(item => item.name ==="type.txt"))[0].download_url
-            console.log("type doc: " + type_doc)
+            const type_doc = (response.data.filter(item => item.name ==="type.txt"))[0].download_url
+            const elements_project = (response.data.filter(item => item.name !=="type.txt"))
             
-            
+            axios.get(type_doc)
+            .then(response => {
+                console.log(response.data)
+
+                if (response.data == "video"){
+                    add_video_section(elements_project)
+                }
+
+            })
+            .catch(error => console.error('Error:', error));
 
 
 
@@ -62,4 +58,8 @@ function add_section_names_into_web(sections){
         .catch(error => console.error('Error al cargar las carpetas:', error));
 
     });
+}
+
+function add_video_section(url){
+    console.log(url)
 }
