@@ -107,9 +107,16 @@ async function get_txtcontent_url(videofilecontents_url, type_content) {
 
 async function add_video_to_section(new_section, projects) {
     // Crear carrusel
+
+    const section_video_title = document.createElement("p")
+    section_video_title.innerHTML="Proyecto audiovisual"
+    section_video_title.classList.add("section_video_title")
+    new_section.appendChild(section_video_title)
+
     const video_project = document.createElement("div");
     video_project.classList.add("video_project");
     new_section.appendChild(video_project);
+    
     
     const main_video_container = document.createElement("div");
     main_video_container.classList.add("main_video_container");
@@ -169,6 +176,40 @@ async function add_video_to_section(new_section, projects) {
     carrousel.classList.add("carrousel");
     video_project.appendChild(carrousel);
 
+    main_video_container.addEventListener("click", function(){
+        if (!document.querySelector(".video_player_background")){
+            const video_player_background = document.createElement("div");
+            video_player_background.classList.add("video_player_background");
+            document.body.appendChild(video_player_background)
+            document.body.style.overflow = "hidden"
+
+            
+            const iframe_container = document.createElement("div");
+            iframe_container.classList.add("iframe_container");
+            document.body.appendChild(iframe_container)
+
+            iframe_container.addEventListener("click", function(){
+                this.remove()
+                video_player_background.remove()
+                document.body.style.overflow = "scroll"
+            })
+            
+            const iframe = document.createElement("iframe");
+            const videoid = (document.querySelector(".carousel_selected").dataset.video).split('v=')[1]?.split('&')[0];
+            iframe.src = `https://www.youtube.com/embed/${videoid}?autoplay=1&mute=1&showinfo=0&modestbranding=1&rel=0`;
+            iframe.width="80%";
+            iframe.height="80%";
+            iframe.allowFullscreen=true;
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            iframe_container.appendChild(iframe);
+            // console.log("url:", document.querySelector(".carousel_selected").dataset.video)
+            
+
+        }
+
+
+    })
+
     
     console.log(projects)
     for (let element of projects) {
@@ -213,6 +254,15 @@ async function add_video_to_section(new_section, projects) {
             thumbnailimg.src = video_from_carrousel.dataset.thumbnail;
             project_video_title.innerHTML = video_from_carrousel.dataset.title;
             project_video_description.innerHTML = video_from_carrousel.dataset.description;
+            
+            const all_video_elements = document.querySelectorAll(".video_from_carrousel");
+            console.log(all_video_elements)
+            all_video_elements.forEach(element => {
+                if (element.classList.contains("carousel_selected")){
+                    element.classList.remove("carousel_selected")
+                }
+            })
+            this.classList.add("carousel_selected")
 
         })
 
