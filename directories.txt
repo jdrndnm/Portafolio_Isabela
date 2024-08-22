@@ -43,5 +43,31 @@
             "fotos":"secciones/fotografía/don't%20break%20my%20heart/fotos.pdf"
         }
         
+    },
+    "escritos":{
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        },
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        },
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        },
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        },
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        },
+        "":{
+            "miniatura":"/miniatura.png",
+            "escrito":"/escrito.pdf"
+        }
     }
 }
