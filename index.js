@@ -33,9 +33,13 @@ function get_youtube_id(url) {
 
 async function load_video_projects(){
 
-    console.log(await axios.get("directories.txt"))
+    // console.log(await axios.get("directories.txt"))
+    const all_videos = await axios.get("directories.txt")
+    console.log("all videos xd: ", all_videos)
+    
 
-    const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
+
+    // const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
     for (let i = 0; i < all_videos.data.length; i++) {
         const element = all_videos.data[i];
 
