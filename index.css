@@ -215,8 +215,15 @@ section{
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    z-index: 50;
+    z-index: 99;
+    opacity: 30%;
+
 }
+.continue_intro:hover{
+    opacity: 100%;
+}
+
+
 .continue_intro span{
     display: inline-block;
     transform: rotate(90deg) scale(1, 1);
@@ -356,7 +363,7 @@ section{
     position: relative;
     /* box-shadow: inset 0px 0px 100px 1px rgb(5, 5, 5); */
     background-color: rgb(228, 228, 228);
-    z-index: 100;
+    z-index: 90;
     cursor: pointer;
     max-height: 25vh;
 }
@@ -426,9 +433,10 @@ footer{
     justify-content: center;
     margin-top: 200px; 
     height: 240px;
-    background-color: rgb(48 28 59 / 82%);
+    background-color: rgb(48, 28, 59);
     color: white;
     width: 100%;
+    z-index: 100;
 }
 .contact-info div a, .contact-info div{
     color: #ffffff;

@@ -227,10 +227,33 @@ const lista = [
     { index: 4, content: document.querySelector(".contacto_section")  }
 ];
 
+let button_continue_target = null;
+
+document.querySelector(".continue_intro").addEventListener("click", function(){
+    if (button_continue_target){
+        button_continue_target.scrollIntoView()
+    }
+})
+
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            const button_go_down = document.querySelector(".continue_intro");
+            const element = lista.find(item => item.content === entry.target)
+            const next_button_target = lista.find(item => item.index === element.index+1)
+            const next_name = next_button_target.content.classList[0];
+            if (next_name!= "contacto_section"){
+
+                button_go_down.innerHTML = "<span>&#10140;</span>"+next_name
+                button_go_down.style.opacity = "30%";
+
+                button_continue_target = next_button_target.content
+
+            } else {
+                button_go_down.style.opacity = "0%";
+            }
         } else {
             entry.target.classList.remove('active');
         }
