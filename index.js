@@ -58,6 +58,26 @@ async function load_video_projects(){
         video_title.innerHTML = element.name
         video_item_container.appendChild(video_title)
         
+        video_item_container.addEventListener("click", function(){
+            const background_dark = document.createElement("div");
+            background_dark.classList.add("background_dark");
+            document.body.appendChild(background_dark);
+
+            document.body.style.overflow="hidden";
+
+            const iframe = document.createElement("iframe");
+            iframe.allowFullscreen=true;
+            
+            iframe.src = `https://www.youtube.com/embed/${video_id}`
+
+            background_dark.appendChild(iframe)
+            iframe.classList.add("iframe")
+
+            background_dark.addEventListener("click", function(){
+                this.remove()
+                document.body.style.overflow="scroll";
+            })
+        })
 
     }
 

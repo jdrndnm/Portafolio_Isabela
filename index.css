@@ -40,6 +40,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    scrollbar-width:thin;
     
 }
 .background{
@@ -258,4 +259,20 @@ section{
     font-size: 1.2rem;
     font-weight: bold;
     color: #6f4bba;
+}
+
+.background_dark{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iframe{
+    width: 80vw;
+    height: 60vh;
 }
