@@ -40,12 +40,14 @@ async function load_video_projects(){
 
 
     // const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
-    for (let i = 0; i < all_videos.data.length; i++) {
-        const element = all_videos.data[i];
+    for (let i = 0; i < all_videos.data.audiovisual.length; i++) {
+        const element = all_videos.data.audiovisual[i];
 
-        const content = await axios.get(element.url)
+        // const content = await axios.get(element.url)
 
-        const link_video = await axios.get(content.data[0].download_url)
+        // const link_video = await axios.get(content.data[0].download_url)
+        const link_video = element
+        console.log(element)
 
         const video_id = get_youtube_id(link_video.data)
 
