@@ -5,6 +5,9 @@
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 .main_nav{
     display: flex;
     flex-direction: row;
@@ -100,11 +103,11 @@ section{
     margin-bottom: 30px;
 }
 .introduction_text{
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    /* font-weight: bold; */
 }
 .introduction_text span{
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: #6f4bba;
 }
@@ -114,6 +117,7 @@ section{
     /* text */
     cursor: pointer;
     color: #6f4bba;
+    padding: 5px;
 }
 .nav_btn:hover{
     color: #b298eb;
@@ -168,6 +172,11 @@ section{
         display: flex;
         z-index: 101;
     }
+    .body{
+        gap: 50px;
+    }
+
+
 }
 .show_menu{
     right: 0%;
@@ -373,3 +382,32 @@ section{
 /* .audiovisual{
     width: ;
 } */
+
+.retrato{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0px 0px 11px -3px #bc8ce9;
+}
+.retrato img{
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.contact-info {
+    max-width: 600px;
+    margin: auto;
+}
+.info-item {
+    margin-bottom: 10px;
+}
+.info-item i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
