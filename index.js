@@ -40,16 +40,22 @@ async function load_video_projects(){
 
 
     // const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
-    for (let i = 0; i < all_videos.data.audiovisual.length; i++) {
-        const element = all_videos.data.audiovisual[i];
+    console.log(all_videos.data.audiovisual)
 
-        // const content = await axios.get(element.url)
+    
+    const keys = Object.keys(all_videos.data.audiovisual);
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        console.log(`${key}: ${all_videos.data.audiovisual[key]}`);
 
-        // const link_video = await axios.get(content.data[0].download_url)
-        const link_video = element
-        console.log(element)
 
-        const video_id = get_youtube_id(link_video.data)
+        const link_videotxt = all_videos.data.audiovisual[key]
+        const link = await axios.get(link_videotxt)
+        const link_video = link.data
+
+        console.log("link_video:", link_video)
+
+        const video_id = get_youtube_id(link_video)
 
         // console.log()
 
@@ -63,7 +69,7 @@ async function load_video_projects(){
 
         const video_title = document.createElement("div");
         video_title.classList.add("video_title");
-        video_title.innerHTML = element.name
+        video_title.innerHTML = key
         video_item_container.appendChild(video_title)
         
         video_item_container.addEventListener("click", function(){
@@ -87,7 +93,61 @@ async function load_video_projects(){
             })
         })
 
-    }
+
+    };
+
+    // all_videos.data.audiovisual.array.foreach(element => {
+    //     console.log(element)
+    // })
+
+    // for (let i = 0; i < all_videos.data.audiovisual.length; i++) {
+    //     const element = all_videos.data.audiovisual[i];
+
+        // const content = await axios.get(element.url)
+
+        // const link_video = await axios.get(content.data[0].download_url)
+        // const link_video = element
+        // console.log(element)
+
+        // const video_id = get_youtube_id(link_video.data)
+
+        // // console.log()
+
+        // const video_item_container = document.createElement("div");
+        // video_item_container.classList.add("video_item_container");
+        // document.querySelector(".video_containers").appendChild(video_item_container);
+
+        // const img_thumbnail = document.createElement("img");
+        // img_thumbnail.src = `https://img.youtube.com/vi/${video_id}/hqdefault.jpg`;
+        // video_item_container.appendChild(img_thumbnail)
+
+        // const video_title = document.createElement("div");
+        // video_title.classList.add("video_title");
+        // video_title.innerHTML = element.name
+        // video_item_container.appendChild(video_title)
+        
+        // video_item_container.addEventListener("click", function(){
+        //     const background_dark = document.createElement("div");
+        //     background_dark.classList.add("background_dark");
+        //     document.body.appendChild(background_dark);
+
+        //     document.body.style.overflow="hidden";
+
+        //     const iframe = document.createElement("iframe");
+        //     iframe.allowFullscreen=true;
+            
+        //     iframe.src = `https://www.youtube.com/embed/${video_id}`
+
+        //     background_dark.appendChild(iframe)
+        //     iframe.classList.add("iframe")
+
+        //     background_dark.addEventListener("click", function(){
+        //         this.remove()
+        //         document.body.style.overflow="scroll";
+        //     })
+        // })
+
+    // }
 
 }
 
