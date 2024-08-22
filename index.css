@@ -177,7 +177,8 @@ section{
     }
     .introduction{
         position: relative;
-        top:-80px;
+        top:-120px;
+        min-height: 0px;
     }
 
 
