@@ -33,27 +33,22 @@ function get_youtube_id(url) {
 
 async function load_video_projects(){
 
-    // console.log(await axios.get("directories.txt"))
     const all_videos = await axios.get("directories.txt")
-    console.log("all videos xd: ", all_videos)
     
 
 
     // const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
-    console.log(all_videos.data.audiovisual)
 
     
     const keys = Object.keys(all_videos.data.audiovisual);
     for (let i = 0; i < keys.length; i++) {
         const key = keys[i];
-        console.log(`${key}: ${all_videos.data.audiovisual[key]}`);
 
 
         const link_videotxt = all_videos.data.audiovisual[key]
         const link = await axios.get(link_videotxt)
         const link_video = link.data
 
-        console.log("link_video:", link_video)
 
         const video_id = get_youtube_id(link_video)
 
@@ -96,72 +91,27 @@ async function load_video_projects(){
 
     };
 
-    // all_videos.data.audiovisual.array.foreach(element => {
-    //     console.log(element)
-    // })
-
-    // for (let i = 0; i < all_videos.data.audiovisual.length; i++) {
-    //     const element = all_videos.data.audiovisual[i];
-
-        // const content = await axios.get(element.url)
-
-        // const link_video = await axios.get(content.data[0].download_url)
-        // const link_video = element
-        // console.log(element)
-
-        // const video_id = get_youtube_id(link_video.data)
-
-        // // console.log()
-
-        // const video_item_container = document.createElement("div");
-        // video_item_container.classList.add("video_item_container");
-        // document.querySelector(".video_containers").appendChild(video_item_container);
-
-        // const img_thumbnail = document.createElement("img");
-        // img_thumbnail.src = `https://img.youtube.com/vi/${video_id}/hqdefault.jpg`;
-        // video_item_container.appendChild(img_thumbnail)
-
-        // const video_title = document.createElement("div");
-        // video_title.classList.add("video_title");
-        // video_title.innerHTML = element.name
-        // video_item_container.appendChild(video_title)
-        
-        // video_item_container.addEventListener("click", function(){
-        //     const background_dark = document.createElement("div");
-        //     background_dark.classList.add("background_dark");
-        //     document.body.appendChild(background_dark);
-
-        //     document.body.style.overflow="hidden";
-
-        //     const iframe = document.createElement("iframe");
-        //     iframe.allowFullscreen=true;
-            
-        //     iframe.src = `https://www.youtube.com/embed/${video_id}`
-
-        //     background_dark.appendChild(iframe)
-        //     iframe.classList.add("iframe")
-
-        //     background_dark.addEventListener("click", function(){
-        //         this.remove()
-        //         document.body.style.overflow="scroll";
-        //     })
-        // })
-
-    // }
-
 }
 
 load_video_projects()
 
 
 async function load_photographic_projects(){
-    const all_photos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/fotografía')
+    // const all_photos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/fotografía')
+    const all_photos = await axios.get("directories.txt")
     
-    for (let i = 0; i < all_photos.data.length; i++) {
-        const element = all_photos.data[i];
+    const keys = Object.keys(all_photos.data.fotografia);
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
 
-        const element_url = await axios.get(element.url)
-        const thumbnail_url = element_url.data.filter(item => item.name === "miniatura.png")[0].download_url
+        // const element = all_photos.data[i];
+
+        // const element_url = await axios.get(element.url)
+        // const thumbnail_url = element_url.data.filter(item => item.name === "miniatura.png")[0].download_url
+
+        const thumbnail_url = all_photos.data.fotografia[key].miniatura
+        const element_url = all_photos.data.fotografia[key].fotos
+        console.log(thumbnail_url)
 
         const photo = document.createElement("div");
         photo.classList.add("photo");
@@ -180,7 +130,7 @@ async function load_photographic_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = "https://docs.google.com/gview?url="+element_url.data.filter(item  => item.name === "fotos.pdf")[0].path+"&embedded=true";
+            pdf_obj.src = "https://docs.google.com/gview?url=https://jdrndnm.github.io/test_portfolio/"+element_url+"&embedded=true";
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";

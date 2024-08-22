@@ -4,5 +4,44 @@
         "ISABELA VALENCIA TCA":"secciones/audiovisual/ISABELA%20VALENCIA%20TCA/video.txt",
         "ISABELA VALENCIA TESTIMONIO AUDIOVISUAL":"secciones/audiovisual/ISABELA%20VALENCIA%20TESTIMONIO%20AUDIOVISUAL/video.txt",
         "Video Final":"secciones/audiovisual/Video%20Final/video.txt"
+    },
+    "fotografia":{
+        "Brief Isabela Valencia": {
+            "miniatura":"secciones/fotografía/Brief%20Isabela%20Valencia/miniatura.png",
+            "fotos":"secciones/fotografía/Brief%20Isabela%20Valencia/fotos.pdf"
+        },
+        "Denuncia":{
+            "miniatura":"secciones/fotografía/Denuncia/miniatura.png",
+            "fotos":"secciones/fotografía/Denuncia/fotos.png"
+        },
+        "Elegant Family Photo":{
+            "miniatura":"secciones/fotografía/Elegant%20Family%20Photo/miniatura.png",
+            "fotos":"secciones/fotografía/Elegant%20Family%20Photo/fotos.pdf"
+        },
+        "HIS":{
+            "miniatura":"secciones/fotografía/HIS/miniatura.png",
+            "fotos":"secciones/fotografía/HIS/fotos.pdf"
+        },
+        "Los textos y las fotos":{
+            "miniatura":"secciones/fotografía/Los%20textos%20y%20las%20fotos/miniatura.png",
+            "fotos":"secciones/fotografía/Los%20textos%20y%20las%20fotos/fotos.pdf"
+        },
+        "Mar moderno en azul y blanco":{
+            "miniatura":"secciones/fotografía/Mar%20moderno%20en%20azul%20y%20blanco/miniatura.png",
+            "fotos":"secciones/fotografía/Mar%20moderno%20en%20azul%20y%20blanco/fotos.pdf"
+        },
+        "Rosa y Rojo":{
+            "miniatura":"secciones/fotografía/Rosa%20y%20Rojo/miniatura.png",
+            "fotos":"secciones/fotografía/Rosa%20y%20Rojo/fotos.pdf"
+        },
+        "Un día en la plaza":{
+            "miniatura":"secciones/fotografía/Un%20día%20en%20la%20plaza/miniatura.png",
+            "fotos":"secciones/fotografía/Un%20día%20en%20la%20plaza/fotos.pdf"
+        },
+        "don't break my heart":{
+            "miniatura":"secciones/fotografía/don't%20break%20my%20heart/miniatura.png",
+            "fotos":"secciones/fotografía/don't%20break%20my%20heart/fotos.pdf"
+        }
+        
     }
 }
