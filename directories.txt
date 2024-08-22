@@ -2,7 +2,7 @@
     "audiovisual":{
         "Diseño sin título":"secciones/audiovisual/Diseño%20sin%20título/video.txt",
         "ISABELA VALENCIA TCA":"secciones/audiovisual/ISABELA%20VALENCIA%20TCA/video.txt",
-        "ISABELA VALENCIA TESTIMONIO AUDIOVISUAL":"secciones/audiovisual/ISABELA%20VALENCIA%20TESTIMONIO%20AUDIOVISUAL.video.txt",
+        "ISABELA VALENCIA TESTIMONIO AUDIOVISUAL":"secciones/audiovisual/ISABELA%20VALENCIA%20TESTIMONIO%20AUDIOVISUAL/video.txt",
         "Video Final":"secciones/audiovisual/Video%20Final/video.txt"
     }
 }
