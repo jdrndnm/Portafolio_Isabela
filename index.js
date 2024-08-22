@@ -130,7 +130,7 @@ async function load_photographic_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = "https://docs.google.com/gview?url=https://jdrndnm.github.io/test_portfolio/"+element_url+"&embedded=true";
+            pdf_obj.src = "https://jdrndnm.github.io/test_portfolio/"+element_url;
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
