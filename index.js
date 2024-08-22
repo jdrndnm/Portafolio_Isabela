@@ -18,6 +18,17 @@ document.querySelector(".burguer").addEventListener("click", function(){
     
 })
 
+function get_youtube_id(url) {
+    // Verifica si la URL es del tipo "youtu.be"
+    const regex = /youtu\.be\/([^\?]+)/;
+    const match = url.match(regex);
+
+    if (match && match[1]) {
+        return match[1]; // La ID del video es el primer grupo de captura
+    } else {
+        return null; // No se encontró una ID válida
+    }
+}
 
 
 async function load_video_projects(){
@@ -25,16 +36,28 @@ async function load_video_projects(){
     const all_videos = await axios.get('https://api.github.com/repos/jdrndnm/test_portfolio/contents/secciones/audiovisual')
     for (let i = 0; i < all_videos.data.length; i++) {
         const element = all_videos.data[i];
-        console.log(element.url);
 
-        const nw = await axios.get(element.url)
-        console.log(nw)
+        const content = await axios.get(element.url)
 
-        // const video_item_container = document.createElement("div");
-        // video_item_container.classList.add("video_item_container");
-        // document.querySelector(".video_containers").appendChild(video_item_container);
+        const link_video = await axios.get(content.data[0].download_url)
 
-        // const img_thumbnail = 
+        const video_id = get_youtube_id(link_video.data)
+
+        // console.log()
+
+        const video_item_container = document.createElement("div");
+        video_item_container.classList.add("video_item_container");
+        document.querySelector(".video_containers").appendChild(video_item_container);
+
+        const img_thumbnail = document.createElement("img");
+        img_thumbnail.src = `https://img.youtube.com/vi/${video_id}/hqdefault.jpg`;
+        video_item_container.appendChild(img_thumbnail)
+
+        const video_title = document.createElement("div");
+        video_title.classList.add("video_title");
+        video_title.innerHTML = element.name
+        video_item_container.appendChild(video_title)
+        
 
     }
 
