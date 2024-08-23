@@ -187,10 +187,26 @@ async function load_doc_projects(){
         doc.classList.add("doc")
         document.querySelector(".docs_container").appendChild(doc);
 
-        const doc_img = document.createElement("img");
-        doc_img.src = all_docs.data.escritos[key].miniatura;
+        const doc_img = document.createElement("div");
+        doc_img.style.backgroundImage  = `url(${all_docs.data.escritos[key].miniatura})`;
+        doc_img.classList.add("doc_img")
+        // doc_img.src = all_docs.data.escritos[key].miniatura;
         
         doc.appendChild(doc_img);
+
+        const cube = document.createElement("div");
+        cube.classList.add("cube");
+        doc_img.appendChild(cube)
+
+        const cube_title = document.createElement("div");
+        cube_title.classList.add("cube_title");
+        doc.appendChild(cube_title)
+        cube_title.innerHTML=key
+
+
+
+
+
 
         doc.addEventListener("click", function(){
             const background_dark = document.createElement("div");

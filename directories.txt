@@ -49,11 +49,11 @@
             "miniatura":"secciones/escritos/Crónica%201%20TCE%205/miniatura.png",
             "escrito":"secciones/escritos/Crónica%201%20TCE%205/escrito.pdf"
         },
-        "EN LA DEFENSA DEL CAPITAL NATURAL":{
+        "En la defensa del capital natural":{
             "miniatura":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/miniatura.png",
             "escrito":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/escrito.pdf"
         },
-        "Links":{
+        "Participaciones":{
             "miniatura":"secciones/escritos/Links/miniatura.png",
             "escrito":"secciones/escritos/Links/Links.docx.pdf"
         },
