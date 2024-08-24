@@ -266,12 +266,14 @@ try{
                 if (next_name!= "contacto_section"){
     
                     button_go_down.innerHTML = "<span>&#10140;</span>"+next_name
-                    button_go_down.style.opacity = "30%";
+                    // button_go_down.style.opacity = "30%";
+                    button_go_down.style.display="block";
     
                     button_continue_target = next_button_target.content
     
                 } else {
-                    button_go_down.style.opacity = "0%";
+                    // button_go_down.style.opacity = "0%";
+                    button_go_down.style.display="none";
                 }
             } else {
                 entry.target.classList.remove('active');
