@@ -148,6 +148,7 @@ async function load_photographic_projects(){
 
             const pdf_obj = document.createElement("iframe");
             pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
