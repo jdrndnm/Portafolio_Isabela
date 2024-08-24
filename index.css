@@ -302,7 +302,7 @@ section{
     justify-content: center;
 }
 
-.iframe{
+iframe{
     width: 80vw;
     height: 60vh;
 }
