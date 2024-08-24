@@ -129,7 +129,6 @@ async function load_photographic_projects(){
 
         const thumbnail_url = all_photos.data.fotografia[key].miniatura
         const element_url = all_photos.data.fotografia[key].fotos
-        console.log(thumbnail_url)
 
         const photo = document.createElement("div");
         photo.classList.add("photo");
@@ -251,34 +250,35 @@ document.querySelector(".continue_intro").addEventListener("click", function(){
     }
 })
 
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            const button_go_down = document.querySelector(".continue_intro");
-            const element = lista.find(item => item.content === entry.target)
-            const next_button_target = lista.find(item => item.index === element.index+1)
-            const next_name = next_button_target.content.classList[0];
-            if (next_name!= "contacto_section"){
-
-                button_go_down.innerHTML = "<span>&#10140;</span>"+next_name
-                button_go_down.style.opacity = "30%";
-
-                button_continue_target = next_button_target.content
-
+try{
+    const observer = new IntersectiosnObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                const button_go_down = document.querySelector(".continue_intro");
+                const element = lista.find(item => item.content === entry.target)
+                const next_button_target = lista.find(item => item.index === element.index+1)
+                const next_name = next_button_target.content.classList[0];
+                if (next_name!= "contacto_section"){
+    
+                    button_go_down.innerHTML = "<span>&#10140;</span>"+next_name
+                    button_go_down.style.opacity = "30%";
+    
+                    button_continue_target = next_button_target.content
+    
+                } else {
+                    button_go_down.style.opacity = "0%";
+                }
             } else {
-                button_go_down.style.opacity = "0%";
+                entry.target.classList.remove('active');
             }
-        } else {
-            entry.target.classList.remove('active');
-        }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
     });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});
+} catch { console.log("ha sucedido un error con el observer.") }
 
 
 
