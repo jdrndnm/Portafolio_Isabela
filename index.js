@@ -154,15 +154,19 @@ async function load_photographic_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            
+
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
+            pdf_obj.attributes="download"
             
             background_dark.appendChild(pdf_obj);
             
             if (isSafari() || isIPhone()){
                 pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+                if(isIPhone()){
+                    window.open("https://jdrndnm.github.io/Portafolio_Isabela/"+element_url, '_blank');
+                }
             } else { 
                 pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
             }
@@ -237,6 +241,9 @@ async function load_doc_projects(){
 
             if (isSafari() || isIPhone()){
                 pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
+                if(isIPhone()){
+                    window.open("https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito, '_blank');
+                }
             } else {
                 pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
                 
