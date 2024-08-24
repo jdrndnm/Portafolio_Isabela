@@ -251,7 +251,7 @@ document.querySelector(".continue_intro").addEventListener("click", function(){
 })
 
 try{
-    const observer = new IntersectiosnObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
