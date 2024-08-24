@@ -245,7 +245,7 @@ async function load_doc_projects(){
             })
 
         })
-
+  
     }  
 }
 
