@@ -12,7 +12,7 @@
         },
         "Denuncia":{
             "miniatura":"secciones/fotografía/Denuncia/miniatura.png",
-            "fotos":"secciones/fotografía/Denuncia/fotos.png"
+            "fotos":"secciones/fotografía/Denuncia/fotos.pdf"
         },
         "Elegant Family Photo":{
             "miniatura":"secciones/fotografía/Elegant%20Family%20Photo/miniatura.png",
