@@ -14,7 +14,12 @@ all_nav_buttons.forEach(element => {
 
 })
 
-
+function isSafari() {
+    // Comprobar si el userAgent contiene 'Safari' y no 'Chrome' o 'Android'
+    var userAgent = navigator.userAgent;
+    var isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+    return isSafari;
+}
 
 document.querySelector(".burguer").addEventListener("click", function(){
     const burguer = document.querySelector(".right_side");
@@ -154,8 +159,11 @@ async function load_photographic_projects(){
             
             background_dark.appendChild(pdf_obj);
             
-            // pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
-            pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            if (isSafari()){
+                pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            } else { 
+                pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            }
             
 
             background_dark.addEventListener("click", function(){
@@ -219,12 +227,17 @@ async function load_doc_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
-
+            
             background_dark.appendChild(pdf_obj);
+
+            if (isSafari()){
+                pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
+            } else {
+                pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
+            }
 
             background_dark.addEventListener("click", function(){
                 this.remove()
