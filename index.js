@@ -147,13 +147,16 @@ async function load_photographic_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
             
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
-
+            
             background_dark.appendChild(pdf_obj);
+            
+            // pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+element_url;
+            
 
             background_dark.addEventListener("click", function(){
                 this.remove()
@@ -216,7 +219,7 @@ async function load_doc_projects(){
             document.body.style.overflow="hidden";
 
             const pdf_obj = document.createElement("iframe");
-            pdf_obj.src = "https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
+            pdf_obj.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://jdrndnm.github.io/Portafolio_Isabela/"+all_docs.data.escritos[key].escrito;
             pdf_obj.width = "1000";
             pdf_obj.height = "800";
             pdf_obj.type = "application/pdf";
