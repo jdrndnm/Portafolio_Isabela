@@ -59,7 +59,7 @@
         },
         "Trabajo Final Organizacional":{
             "miniatura":"secciones/escritos/Trabajo%20Final%20Organizacional/miniatura.png",
-            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/Trabajo Final Organizacional .docx.pdf"
+            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/Trabajo Final Organizacional .docx.pdf" 
         }
     }
 }
