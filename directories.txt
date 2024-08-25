@@ -1,65 +1,65 @@
 {
     "audiovisual":{
-        "Diseño sin título":"secciones/audiovisual/Diseño%20sin%20título/video.txt",
-        "Isabela Valencia TCA":"secciones/audiovisual/ISABELA%20VALENCIA%20TCA/video.txt",
-        "Isabela Valencia testimonio audiovisual":"secciones/audiovisual/ISABELA%20VALENCIA%20TESTIMONIO%20AUDIOVISUAL/video.txt",
-        "Video Final":"secciones/audiovisual/Video%20Final/video.txt"
+        "Diseño sin título":"https://youtu.be/6uS8BfyySqE?si=ACAnUDbHLcV7YFAs",
+        "Isabela Valencia TCA":"https://youtu.be/C8M2g9yV6UU?si=li0Ryax69MQtCPou",
+        "Isabela Valencia testimonio audiovisual":"https://youtu.be/xI-OpXAb2iY?si=ZmdV0J0JjuTixcjr",
+        "Video Final":"https://youtu.be/QFxiST6dld4?si=e-d-vFRaZ4xHx7mF"
     },
     "fotografia":{
         "Brief Isabela Valencia": {
-            "miniatura":"secciones/fotografía/Brief%20Isabela%20Valencia/miniatura.png",
-            "fotos":"secciones/fotografía/Brief%20Isabela%20Valencia/fotos.pdf"
+            "miniatura":"Brief%20Isabela%20Valencia/miniatura.png",
+            "fotos":"Brief%20Isabela%20Valencia/fotos.pdf"
         },
         "Denuncia":{
-            "miniatura":"secciones/fotografía/Denuncia/miniatura.png",
-            "fotos":"secciones/fotografía/Denuncia/fotos.pdf"
+            "miniatura":"Denuncia/miniatura.png",
+            "fotos":"Denuncia/fotos.pdf"
         },
         "Elegant Family Photo":{
-            "miniatura":"secciones/fotografía/Elegant%20Family%20Photo/miniatura.png",
-            "fotos":"secciones/fotografía/Elegant%20Family%20Photo/fotos.pdf"
+            "miniatura":"Elegant%20Family%20Photo/miniatura.png",
+            "fotos":"Elegant%20Family%20Photo/fotos.pdf"
         },
         "HIS":{
-            "miniatura":"secciones/fotografía/HIS/miniatura.png",
-            "fotos":"secciones/fotografía/HIS/fotos.pdf"
+            "miniatura":"HIS/miniatura.png",
+            "fotos":"HIS/fotos.pdf"
         },
         "Los textos y las fotos":{
-            "miniatura":"secciones/fotografía/Los%20textos%20y%20las%20fotos/miniatura.png",
-            "fotos":"secciones/fotografía/Los%20textos%20y%20las%20fotos/fotos.pdf"
+            "miniatura":"Los%20textos%20y%20las%20fotos/miniatura.png",
+            "fotos":"Los%20textos%20y%20las%20fotos/fotos.pdf"
         },
         "Mar moderno en azul y blanco":{
-            "miniatura":"secciones/fotografía/Mar%20moderno%20en%20azul%20y%20blanco/miniatura.png",
-            "fotos":"secciones/fotografía/Mar%20moderno%20en%20azul%20y%20blanco/fotos.pdf"
+            "miniatura":"Mar%20moderno%20en%20azul%20y%20blanco/miniatura.png",
+            "fotos":"Mar%20moderno%20en%20azul%20y%20blanco/fotos.pdf"
         },
         "Rosa y Rojo":{
-            "miniatura":"secciones/fotografía/Rosa%20y%20Rojo/miniatura.png",
-            "fotos":"secciones/fotografía/Rosa%20y%20Rojo/fotos.pdf"
+            "miniatura":"Rosa%20y%20Rojo/miniatura.png",
+            "fotos":"Rosa%20y%20Rojo/fotos.pdf"
         },
         "Un día en la plaza":{
-            "miniatura":"secciones/fotografía/Un%20día%20en%20la%20plaza/miniatura.png",
-            "fotos":"secciones/fotografía/Un%20día%20en%20la%20plaza/fotos.pdf"
+            "miniatura":"Un%20día%20en%20la%20plaza/miniatura.png",
+            "fotos":"Un%20día%20en%20la%20plaza/fotos.pdf"
         },
         "don't break my heart":{
-            "miniatura":"secciones/fotografía/don't%20break%20my%20heart/miniatura.png",
-            "fotos":"secciones/fotografía/don't%20break%20my%20heart/fotos.pdf"
+            "miniatura":"don't%20break%20my%20heart/miniatura.png",
+            "fotos":"don't%20break%20my%20heart/fotos.pdf"
         }
         
     },
     "escritos":{
         "Crónica 1 TCE 5":{
-            "miniatura":"secciones/escritos/Crónica%201%20TCE%205/miniatura.png",
-            "escrito":"secciones/escritos/Crónica%201%20TCE%205/escrito.pdf"
+            "miniatura":"Crónica%201%20TCE%205/miniatura.png",
+            "escrito":"Crónica%201%20TCE%205/escrito.pdf"
         },
         "En la defensa del capital natural":{
-            "miniatura":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/miniatura.png",
-            "escrito":"secciones/escritos/EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/escrito.pdf"
+            "miniatura":"EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/miniatura.png",
+            "escrito":"EN%20LA%20DEFENSA%20DEL%20CAPITAL%20NATURAL/escrito.pdf"
         },
         "Participaciones":{
-            "miniatura":"secciones/escritos/Links/miniatura.png",
-            "escrito":"secciones/escritos/Links/Links.docx.pdf"
+            "miniatura":"Links/miniatura.png",
+            "escrito":"Links/Links.docx.pdf"
         },
         "Trabajo Final Organizacional":{
-            "miniatura":"secciones/escritos/Trabajo%20Final%20Organizacional/miniatura.png",
-            "escrito":"secciones/escritos/Trabajo%20Final%20Organizacional/Trabajo Final Organizacional .docx.pdf" 
+            "miniatura":"Trabajo%20Final%20Organizacional/miniatura.png",
+            "escrito":"Trabajo%20Final%20Organizacional/Trabajo Final Organizacional .docx.pdf" 
         }
     }
 }
